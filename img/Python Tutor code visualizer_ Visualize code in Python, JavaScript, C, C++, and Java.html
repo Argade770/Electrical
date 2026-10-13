@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  Python Tutor: Copyright (C) Philip Guo
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Tutor code visualizer: Visualize code in Python, JavaScript, C, C++, and Java</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Python Tutor: Visualize Code and Get AI Help for Python, JavaScript, C, C++, and Java. This is the only tool that lets you debug code step-by-step and get personalized AI tutoring.">
+  <link rel="canonical" href="https://pythontutor.com/visualize.html">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pythontutor.com/visualize.html">
+  <meta property="og:title" content="Python Tutor - Visualize Code Execution">
+  <meta property="og:description" content="Free online compiler and visual debugger for Python, Java, C, C++, and JavaScript. Step-by-step visualization with AI tutoring.">
+  <meta property="og:site_name" content="Python Tutor">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://pythontutor.com/imgs/fruitlist-1.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Python Tutor - Visualize Code Execution">
+  <meta name="twitter:description" content="Free online compiler and visual debugger for Python, Java, C, C++, and JavaScript.">
+  <meta name="twitter:image" content="https://pythontutor.com/imgs/fruitlist-1.png">
+
+  <!-- Google Fonts for redesigned template
+
+       Font URL format explanation:
+       - family=FontName:axes@values
+       - For Funnel Sans, we use two axes: ital (italic) and wght (weight)
+       - Format: ital,wght@{ital},{wght};{ital},{wght};...
+       - ital: 0 = normal (upright), 1 = italic
+       - wght: 400 = regular, 600 = semibold, 700 = bold
+
+       Current Funnel Sans values:
+       - 0,400 = normal weight 400 (regular text)
+       - 0,600 = normal weight 600 (semibold)
+       - 0,700 = normal weight 700 (bold, used by <strong> and <b>)
+       - 1,400 = italic weight 400 (used by <em> and <i>)
+       - 1,700 = italic weight 700 (bold italic, used by <strong><em>)
+
+       If italic variants are not loaded, the browser fakes italics by
+       slanting the regular font ("faux italic") which looks bad.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 2026-08-05: load Google Fonts WITHOUT blocking first paint. media="print"
+       makes the browser fetch this stylesheet at low priority without blocking
+       rendering, and onload flips it to media="all" so the fonts apply once
+       loaded; the <noscript> copy covers JS-off browsers. The font stacks in
+       styles.css have system-font fallbacks and display=swap is set, so text
+       renders immediately in fallback fonts and swaps when ready. This also
+       prevents multi-second blank-first-paint hangs in mainland China, where
+       fonts.googleapis.com is blocked (same non-blocking pattern the site
+       already uses for map-widget.css on the homepage). [written by Claude
+       Code on 2026-08-05, may be incorrect/outdated] -->
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,400;0,600;0,700;1,400;1,700&family=JetBrains+Mono&family=Radio+Canada+Big:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,400;0,600;0,700;1,400;1,700&family=JetBrains+Mono&family=Radio+Canada+Big:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Redesigned template stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- let Webpack take care of everything. Use the [hash] feature to
+       create unique filenames for releases:
+       https://webpack.github.io/docs/long-term-caching.html -->
+  <!-- 2026-08-05: defer lets the static HTML shell render while this big
+       bundle downloads in parallel; all entry-point code already waits for
+       $(document).ready, so execution behavior is unchanged. [written by
+       Claude Code on 2026-08-05, may be incorrect/outdated] -->
+  <script type="text/javascript" src="build/visualize.bundle.js?6a2cb5a312" charset="utf-8" defer></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1196791312561571"
+     crossorigin="anonymous"></script>
+
+
+<!-- insert google-analytics.txt contents here -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQKWR5SQ3H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZQKWR5SQ3H');
+</script>
+
+</head>
+
+<body>
+<!-- page--fit-content: makes header/footer expand to match wide content (see styles.css) -->
+<div class="page page--fit-content">
+
+<!-- Navigation -->
+<!-- 2026-01-21: Disable sticky header on this page by overriding position:sticky from styles.css.
+     The inline style is used so other pages sharing styles.css can keep their sticky headers. -->
+<header class="nav" style="position: relative;">
+  <div class="nav__left">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-text">Python Tutor</span>
+    </a>
+    <nav class="nav__languages" aria-label="Language tutors">
+      <a href="java.html" class="nav__lang-link">Java Tutor</a>
+      <a href="c.html" class="nav__lang-link">C Tutor</a>
+      <a href="cpp.html" class="nav__lang-link">C++ Tutor</a>
+      <a href="javascript.html" class="nav__lang-link">JavaScript Tutor</a>
+    </nav>
+  </div>
+  <nav class="nav__right" aria-label="Main navigation">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvs94n1d3ZaXDgytT7JhXBafS8q12ucr9YNiZCBakCQ-w6LA/viewform?usp=dialog" class="nav__link">Teacher Mode</a>
+    <a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/" class="nav__link">Docs</a>
+    <a href="index.html#impact" class="nav__link">Impact</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVehBoLGJhbB9GGSh5Bj8AWa0rF5NCMjLCtuA3rhaEJlsRlg/viewform?usp=sf_link" class="nav__link nav__link--donate">Donate</a>
+  </nav>
+  <button class="nav__hamburger" aria-label="Menu">
+    <span class="nav__hamburger-bar"></span>
+    <span class="nav__hamburger-bar"></span>
+    <span class="nav__hamburger-bar"></span>
+  </button>
+</header>
+
+<!-- Mobile/Tablet Slide-out Menu -->
+<div class="nav-overlay" aria-hidden="true"></div>
+<aside class="nav-menu" aria-label="Mobile navigation" aria-hidden="true">
+  <!-- Tablet: Close button only (top-right) -->
+  <button class="nav-menu__close nav-menu__close--tablet" aria-label="Close menu">
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L14 14M14 1L1 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- Mobile: Header with logo + close button -->
+  <div class="nav-menu__header">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-text">Python Tutor</span>
+    </a>
+    <button class="nav-menu__close nav-menu__close--mobile" aria-label="Close menu">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L14 14M14 1L1 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile: Language tutor buttons -->
+  <div class="nav-menu__languages">
+    <a href="java.html" class="nav-menu__lang-btn">Java Tutor</a>
+    <a href="c.html" class="nav-menu__lang-btn">C Tutor</a>
+    <a href="cpp.html" class="nav-menu__lang-btn">C++ Tutor</a>
+    <a href="javascript.html" class="nav-menu__lang-btn">JavaScript Tutor</a>
+  </div>
+
+  <!-- Mobile: Teal card with nav links -->
+  <div class="nav-menu__card">
+    <nav class="nav-menu__card-links">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvs94n1d3ZaXDgytT7JhXBafS8q12ucr9YNiZCBakCQ-w6LA/viewform?usp=dialog" class="nav-menu__card-link">Teacher Mode</a>
+      <a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/" class="nav-menu__card-link">Docs</a>
+      <a href="index.html#impact" class="nav-menu__card-link">Impact</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVehBoLGJhbB9GGSh5Bj8AWa0rF5NCMjLCtuA3rhaEJlsRlg/viewform?usp=sf_link" class="nav-menu__card-link nav-menu__card-link--donate">Donate</a>
+    </nav>
+  </div>
+
+  <!-- Tablet: Simple nav links (no card) -->
+  <nav class="nav-menu__links">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvs94n1d3ZaXDgytT7JhXBafS8q12ucr9YNiZCBakCQ-w6LA/viewform?usp=dialog" class="nav-menu__link">Teacher Mode</a>
+    <a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/" class="nav-menu__link">Docs</a>
+    <a href="index.html#impact" class="nav-menu__link">Impact</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVehBoLGJhbB9GGSh5Bj8AWa0rF5NCMjLCtuA3rhaEJlsRlg/viewform?usp=sf_link" class="nav-menu__link nav-menu__link--donate">Donate</a>
+  </nav>
+</aside>
+
+<!-- Mini Hero Section -->
+<section class="mini-hero">
+  <div class="mini-hero__content">
+    <h1 class="mini-hero__title">Visualize code execution for <a href="articles/python-visualizer.html">Python</a>, <a href="articles/java-visualizer.html">Java</a>, <a href="articles/c-cpp-visualizer.html">C, C++</a>, and <a href="articles/javascript-visualizer.html">JavaScript</a></h1>
+    <p class="mini-hero__subtitle">This is the only tool that lets you debug code step-by-step and get personalized AI tutoring.</p>
+  </div>
+</section>
+
+<!-- Main content area -->
+<main>
+
+<!-- 2026-01-18: Wrapper div to scope CSS styles and prevent conflicts with external template -->
+<div class="pythontutor-app">
+<div class="app-layout">
+<div class="app-layout__main"> <!-- pyInputPane and pyOutputPane and google_ad -->
+
+<div id="pyInputPane">
+
+<div id="codeIsRunning">Please wait ... your code is running (up to 10 seconds)</div>
+<div id="aboveTheFoldWarningMsg"></div>
+
+<div id="codeInputWarnings">Write code in
+
+  <select id="pythonVersionSelector">
+    <!-- 2023-08-31 - added Python 3.11 but keep 3.6 as the default for backward-compatibility,
+         2024-11-23 - switch to 3.11 as default but keep the 'value' fields unchanged for backward compatibility -->
+    <option value="311" selected>Python 3.11</option>
+    <option value="3">Python 3.6 [try if 3.11 doesn't work]</option>
+    <option value="java">Java</option>
+    <option value="c_gcc9.3.0">C (C17 + GNU extensions)</option>
+    <option value="cpp_g++9.3.0">C++ (C++20 + GNU extensions)</option>
+    <option value="js">JavaScript (ES6)</option>
+    <option disabled>------</option>
+    <option value="2">Python 2.7 [unsupported]</option>
+  </select>
+
+</div>
+
+<div id="codeInputPane"></div> <!-- populate with Ace code editor instance -->
+<div id="frontendErrorOutput"></div>
+<div id="surveyPane"></div>
+
+<p>
+<button id="executeBtn" class="bigBtn" type="button">Visualize Execution</button>
+</p>
+
+<div id="savedInputsPane"></div>
+
+<div id="instructionsPane"></div>
+
+<div id="optionsPane"></div>
+
+
+<div id="exampleSnippets"></div>
+
+</div> <!-- end pyInputPane -->
+
+<div id="pyOutputPane"></div>
+
+<!-- 2025-11-06 - remove ad below the visualizer:
+<div id="google_ad">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1196791312561571"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1196791312561571"
+     data-ad-slot="5241316916"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+-->
+
+<div id="footerAboveInlineDocs"></div>
+
+</div> <!-- end app-layout__main -->
+
+<div class="app-layout__sidebar">
+<div id="google_righthand_ad">
+<div id="adheader">
+  Ads keep this site <a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/edit#bookmark=id.30s45wc6dpsz" target="_blank">free for everyone</a>.
+  <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeVehBoLGJhbB9GGSh5Bj8AWa0rF5NCMjLCtuA3rhaEJlsRlg/viewform?usp=sf_link">Donate</a> to get ad-free and faster AI.
+  (Teachers get <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfvs94n1d3ZaXDgytT7JhXBafS8q12ucr9YNiZCBakCQ-w6LA/viewform?usp=dialog">free access</a>)</div>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1196791312561571"
+     crossorigin="anonymous"></script>
+<!-- right-side responsive ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1196791312561571"
+     data-ad-slot="3574141637"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+</div> <!-- end app-layout__sidebar -->
+
+</div> <!-- end app-layout -->
+
+</div><!-- end .pythontutor-app -->
+
+<div class="article-main"> <!-- .article-main wrapper is necessary to provide left/right padding -->
+<article id="article">
+
+<p><a href="https://pythontutor.com/">Python Tutor</a> is designed to imitate what an
+instructor in an introductory programming class draws on the blackboard:</p>
+<p><img src="articles/cs61b-blackboard.png" style="width: 700px;"></img></p>
+<p>Instructors use it as a teaching tool, and students use it to visually
+understand code examples and interactively debug their programming
+assignments.</p>
+<p>Quick links:</p>
+<ul>
+<li><a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/">Documentation and unsupported features</a></li>
+<li><a href="https://docs.google.com/document/d/1quk8gdvgzaYrZaOSiVzCia8tCXBFmuTk0awMw_-OTuE/edit?usp=sharing">FAQ for instructors using Python Tutor</a></li>
+<li><a href="articles/java-visualizer.html">How the Python Tutor visualizer can help students in your Java programming courses</a></li>
+<li><a href="articles/c-cpp-visualizer.html">How the Python Tutor visualizer can help students in your C or C++ courses</a></li>
+</ul>
+
+<h3>Demo</h3>
+<p>The screenshot below shows how a typical user (either an instructor or a
+student) would interact with it:</p>
+<p><img src="articles/opt-java-annotated.png" style="width: 1000px;"></img></p>
+<ul>
+<li>(1) Go to <a href="https://pythontutor.com/">pythontutor.com</a> and select a language. Here the user chose Java and wrote code to recursively create a <code>LinkedList</code>.</li>
+<li>(2) Press 'Visualize' to run the code. This code ran for 46 steps, where each step is one executed line of code. Go to any step (2a) and see what line of code was being run at that step (2b).</li>
+<li>(3) See the frames of all functions/methods on the stack at this step, each of which shows its local variables. Here at step 41 we see <code>main()</code> along with 4 recursive calls to <code>init()</code>.</li>
+<li>(4) See all objects on the heap at the current step. Here it shows a <code>LinkedList</code> instance with <code>first</code> and <code>last</code> fields pointing to its first and last <code>Node</code> instances, respectively. Each <code>Node</code> has a numerical value and a <code>next</code> pointer.</li>
+<li>(5) See what has been printed up to this step. Here the print statement in the <code>Node</code> constructor (line 5) has run 3 times.</li>
+</ul>
+<p>The user can navigate forwards and backwards through all execution steps, and the visualization changes to match the run-time state of the stack and heap at each step. In this example, the user would see their custom <code>LinkedList</code> data structure getting incrementally built up one Node at a time via recursive calls to <code>init()</code> until the base case is reached when <code>n==0</code>.</p>
+<h3>Language Support</h3>
+<p>Despite its name, Python Tutor is also a widely-used <a href="articles/java-visualizer.html">web-based
+visualizer for Java</a> that helps students
+to understand and debug their code. It visualizes the majority of
+object-oriented programming concepts taught in introductory college
+courses (e.g., CS1 and CS2), high school AP Computer Science, and
+intermediate-level Java programming.</p>
+<p>Python Tutor is also a widely-used <a href="articles/c-cpp-visualizer.html">web-based visualizer for C and
+C++</a> meant to help students in
+introductory and intermediate-level courses. It uses
+<a href="https://valgrind.org/">Valgrind</a> to perform memory-safe run-time
+traversal of data structures, which lets it display data more accurately
+than gdb or printf debugging. For instance, it can precisely visualize
+critical concepts such as pointers, uninitialized memory, out-of-bounds
+errors, nested arrays/structs/unions, type punning, and bit
+manipulation.</p>
+<p>Lastly, it also supports visualizing standalone JavaScript execution,
+but not web frontend code that does DOM manipulation on webpages.</p>
+
+<h3>Reporting Bugs</h3>
+<p>The issue you're encountering is <a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/">likely listed in this
+document</a>.
+If you're sure it's not, use the "Generate permanent link" button to
+make a URL of your code. Describe the expected behavior when running
+that code on your computer and <b>how it differs from Python Tutor</b>, then
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScGHzS7yDtHt9vmkRUp-FHCLK3NRg0hGolO7WFrqKZDyqL3Rg/viewform?usp=sf_link">fill out this Google
+Form</a>
+to report your bug or security issue.</p>
+
+</article><!-- end article -->
+</div><!-- end .article-main -->
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__top">
+      <h2 class="footer__title">Python Tutor</h2>
+      <div class="footer__donate">
+        <span class="footer__donate-text">Keep this tool free for everyone!</span>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVehBoLGJhbB9GGSh5Bj8AWa0rF5NCMjLCtuA3rhaEJlsRlg/viewform?usp=sf_link" class="footer__donate-btn">Donate</a>
+      </div>
+    </div>
+    <div class="footer__links">
+      <div class="footer__col">
+        <h3 class="footer__col-title">Languages</h3>
+        <ul class="footer__col-list">
+          <li><a href="python-compiler.html">Python</a></li>
+          <li><a href="java.html">Java</a></li>
+          <li><a href="c.html">C</a> and <a href="cpp.html">C++</a></li>
+          <li><a href="javascript.html">JavaScript</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__col-title">About</h3>
+        <ul class="footer__col-list">
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfvs94n1d3ZaXDgytT7JhXBafS8q12ucr9YNiZCBakCQ-w6LA/viewform?usp=dialog">Teacher Mode</a></li>
+          <li><a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/">Docs</a></li>
+          <li><a href="index.html#impact">Impact</a></li>
+        </ul>
+      </div>
+      <!--
+      <div class="footer__col">
+        <h3 class="footer__col-title">Learn</h3>
+        <ul class="footer__col-list">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Videos</a></li>
+        </ul>
+      </div>
+      -->
+      <div class="footer__col footer__col--wide">
+        <h3 class="footer__col-title">Help</h3>
+        <ul class="footer__col-list">
+          <li><a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/edit?tab=t.0#bookmark=id.15szxjmdeghv">Report a Bug</a></li>
+          <li><a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/edit?tab=t.0#bookmark=id.foejiogbhizj">Unsupported Features</a></li>
+          <li><a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/edit?tab=t.0#bookmark=id.zaiomiz3ejh9">Terms of Service</a></li>
+          <li><a href="https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/edit?tab=t.0#bookmark=id.zaiomiz3ejh9">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div><!-- end .page -->
+
+<!-- 2026-01-21: Sticky header scroll effect disabled on this page (see inline style on .nav above).
+     Keeping this code commented out in case we want to re-enable it later.
+<script>
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('.nav');
+    if (window.scrollY > 0) {
+      nav.classList.add('nav--scrolled');
+    } else {
+      nav.classList.remove('nav--scrolled');
+    }
+  });
+</script>
+-->
+
+<!-- Slide-out navigation menu -->
+<script>
+  (function() {
+    var hamburger = document.querySelector('.nav__hamburger');
+    var menu = document.querySelector('.nav-menu');
+    var overlay = document.querySelector('.nav-overlay');
+    var closeBtnTablet = document.querySelector('.nav-menu__close--tablet');
+
+    // Check if we're on mobile (< 750px)
+    function isMobile() {
+      return window.innerWidth < 750;
+    }
+
+    function openMenu() {
+      // Show elements first (display: block/flex)
+      menu.classList.add('nav-menu--visible');
+      overlay.classList.add('nav-overlay--visible');
+      menu.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+
+      // Trigger reflow to ensure transition works
+      menu.offsetHeight;
+
+      // Then animate in
+      menu.classList.add('nav-menu--open');
+      overlay.classList.add('nav-overlay--active');
+      document.body.classList.add('nav-menu-open');
+
+      // On mobile, scroll menu to bottom (content is anchored to bottom)
+      if (isMobile()) {
+        menu.scrollTop = menu.scrollHeight;
+      }
+
+      // Focus management: on tablet focus close button, on mobile stay on hamburger
+      if (!isMobile() && closeBtnTablet) {
+        closeBtnTablet.focus();
+      }
+    }
+
+    function closeMenu() {
+      // Animate out
+      menu.classList.remove('nav-menu--open');
+      overlay.classList.remove('nav-overlay--active');
+      document.body.classList.remove('nav-menu-open');
+      menu.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+
+      // After transition, hide elements
+      setTimeout(function() {
+        menu.classList.remove('nav-menu--visible');
+        overlay.classList.remove('nav-overlay--visible');
+      }, 300); // Match CSS transition duration
+
+      // Return focus to hamburger button
+      hamburger.focus();
+    }
+
+    function toggleMenu() {
+      if (menu.classList.contains('nav-menu--open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    // Hamburger: toggle on mobile, open-only on tablet
+    hamburger.addEventListener('click', function() {
+      if (isMobile()) {
+        toggleMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Tablet close button
+    if (closeBtnTablet) {
+      closeBtnTablet.addEventListener('click', closeMenu);
+    }
+
+    // Overlay click (tablet only)
+    overlay.addEventListener('click', closeMenu);
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menu.classList.contains('nav-menu--open')) {
+        closeMenu();
+      }
+    });
+
+    // Close menu when clicking any link
+    menu.querySelectorAll('.nav-menu__link, .nav-menu__lang-btn, .nav-menu__card-link').forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+  })();
+</script>
+
+</body>
+</html>

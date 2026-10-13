@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical services</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="./img/logo.jpeg"type="icon">
+
+    <link rel="stylesheet" href="./Electrical.css">
+    <script href="./Electrical.js"></script>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <div>
+          <img src="./img/logo.jpeg"alt="logo" height="85px" width="85px" style="border-radius:50% ;">
+        </div>
+    </div>
+
+    <nav>
+        <a href="./Electrical.html">Home</a>
+        <a href="#products">services</a>
+        <a href="#categories">Categories</a>
+        <a href="#">Brands</a>
+        <a href="#">Offers</a>
+        <a href="#">About</a>
+        <a href="./contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+
+        <div class="search">
+            <input type="text" id="searchBox"
+                   placeholder="Search for lights, switches, fans...">
+            <button onclick="searchProduct()">⌕</button>
+        </div>
+
+        <span class="user">♙</span>
+
+        <div class="cart" onclick="showCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">BETTER LIGHTS &nbsp; BRIGHTER SPACES</p>
+
+        <h1>
+            Illuminate<br>
+            <span>Your World</span>
+        </h1>
+
+        <p class="description">
+            Premium electrical & lighting solutions
+            for modern homes and workspaces.
+        </p>
+
+        <button class="shop-btn" onclick="shopNow()">
+            Shop Now →
+        </button>
+
+        <div class="features">
+
+            <div>
+                <span>ϟ</span>
+                <p>Energy<br>Efficient</p>
+            </div>
+
+            <div>
+                <span>◇</span>
+                <p>Premium<br>Quality</p>
+            </div>
+
+            <div>
+                <span>♢</span>
+                <p>Safe &<br>Reliable</p>
+            </div>
+
+            <div>
+                <span>♧</span>
+                <p>Eco<br>Friendly</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img src="./img/smart-home-trends-2017-1536x1086.webp">
+        <div class="hero-text">
+            <p>Good<br>Lights</p>
+            <span>Brighter<br>Lives</span>
+        </div>
+
+    </div>
+
+
+    <div class="side-text">
+
+        <p>HOMES</p>
+        <p>OFFICES</p>
+        <p>SHOWROOMS</p>
+        <p>HOTELS</p>
+        <p>EVERYWHERE</p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories" id="categories">
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=500&q=80">
+
+        <div>
+            <h3>LED Lights</h3>
+            <p>Bright & Efficient</p>
+        </div>
+
+        <button>→</button>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=500&q=80">
+
+        <div>
+            <h3>Track Lights</h3>
+            <p>Modern Illumination</p>
+        </div>
+
+        <button>→</button>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=500&q=80">
+
+        <div>
+            <h3>Pendant Lights</h3>
+            <p>Style Your Space</p>
+        </div>
+
+        <button>→</button>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=500&q=80">
+
+        <div>
+            <h3>Wall Lights</h3>
+            <p>Beautiful Walls</p>
+        </div>
+
+        <button>→</button>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <img src="./img/celing fanss.jpg">
+
+        <div>
+            <h3>Ceiling Fans</h3>
+            <p>Comfort All Year</p>
+        </div>
+
+        <button>→</button>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=500&q=80">
+
+        <div>
+            <h3>Switches & Sockets</h3>
+            <p>Safety with Style</p>
+        </div>
+
+        <button>→</button>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <img src="./img/outdoor-wall-light-illuminates-field-at-dusk-with-fence-view-photo.jpeg">
+
+        <div>
+            <h3>Outdoor Lights</h3>
+            <p>Light Beyond Walls</p>
+        </div>
+
+        <button>→</button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OFFER SECTION ================= -->
+
+<section class="offer">
+
+    <div class="offer-left">
+
+        <p>Upgrade to</p>
+
+        <h2>Smarter Lighting</h2>
+
+        <span>Modern | Stylish | Energy Saving</span>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <div class="offer-box">
+
+        <p>UP TO</p>
+
+        <h1>30% OFF</h1>
+
+        <span>ON SELECTED LIGHTING PRODUCTS</span>
+
+        <button onclick="grabOffer()">
+            Grab the Offer →
+        </button>
+
+    </div>
+
+
+    <div class="offer-right">
+
+        <p>Small Details</p>
+        <h2>Big Difference</h2>
+
+    </div>
+
+</section>
+
+
+<!-- ================= Electrical service ================= -->
+
+<section class="products" id="products">
+
+    <h2>Electrical service</h2>
+
+    <div class="product-container">
+
+        <div class="product">
+            <img src="./img/images (1).jpg">
+            <h3>	Premium LED TV Backlight / Wall Strip</h3>
+            <p></p>
+            <button onclick="addCart('Premium LED Lamp')">
+                Add to Cart
+            </button>
+        </div>
+
+
+        <div class="product">
+            <img src="./img/istockphoto-1758530578-612x612.jpg">
+            <h3>Professional Electrical Maintenance (Service)</h3>
+            <button onclick="addCart('Modern Pendant Light')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="./img/images.jpg">
+            <h3>			Luxury Staircase Wall Light</h3>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+    <div class="product-container">
+
+        <div class="product">
+            <img src="./img/istockphoto-1770428408-612x612.jpg">
+            <h3>False Ceiling Light Installation (Service)</h3>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+         <div class="product-container">
+        
+        <div class="product">
+            <img src="./img/2W_04_7f00ad19-00e7-4827-9cea-8417a361dd01.webp">
+            <h3>		Modern Outdoor Up-Down Wall Light</h3>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+        
+        <div class="product">
+            <img src="./img/ChatGPT-Image-Jun-2-2026-03_41_27-PM.png">
+            <h3>Luxury Living Room Ceiling Light</h3>
+            <p>₹3,999</p>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="product-container">
+
+        <div class="product">
+            <img src="./img/images.jpg">
+            <h3>Modern Indoor Sconce Wall Light</h3>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+         <div class="product-container">
+        
+        <div class="product">
+            <img src="./img/istockphoto-2084526747-612x612.jpg">
+            <h3>House Wiring & Electrical Piping (Service) </h3>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+        
+        <div class="product">
+            <img src="./img/istockphoto-1345670559-1024x1024.jpg">
+            <h3>Switchboard Installation & Repair (Service)</h3>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="product-container">
+
+        <div class="product">
+            <img src="./img/smart-home-trends-2017-1536x1086.webp">
+            <h3>Luxury Living Room / Interior Lighting</h3>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+         <div class="product-container">
+        
+        <div class="product">
+            <img src="./img/istockphoto-2220215027-612x612.jpg">
+            <h3>MCB Box Installation & Distribution Service</h3>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+        
+        <div class="product">
+            <img src="./img/istockphoto-2151912560-1024x1024.webp">
+            <h3>Switchboard Fitting & Repair Service</h3>
+            <button onclick="addCart('Smart Ceiling Fan')">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
